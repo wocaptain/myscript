@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#Description:计算系统当前所有进程占用内存情况
+#
+sum=0
+for memory in `ps aux|awk '{print $6}'|grep -vi "RSS"`
+do
+   sum=$[$sum+$memory]
+done
+
+#ps显示的单位时kb，进行换算
+fsum=$[$sum/1024]
+echo "当前系统进程占用内存大小：$fsum M"
