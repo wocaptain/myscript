@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+#Description:监控主机存活状态,发现宕机或是丢包严重经行告警.
+#
+#抓取丢包率
+ip=192.168.1.8
+lost=`ping -c10 $ip 2>/dev/null|grep "received"|awk -F 'received, |%' '{print $2}'`
+#判断是否抓取丢包率成功;-n:不为空&&-z:为空
+if [ -z "$lost" ]
+then
+    echo "取值失败,脚本错误"
+#抓取正常对丢包率进行对比，大于30%，进行告警,邮件告警请调用邮件脚本
+elif [ $lost -ge 30 ]
+then
+   echo "主机丢包$lost%,请注意"
+else
+   echo "主机丢包$lost%,正常"
+fi
