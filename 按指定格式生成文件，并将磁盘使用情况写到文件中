@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+#Description:按照xxxx-xx-xx格式每日生成一个文件，并把磁盘使用情况写到找个文件中
+#
+d=`date +%F`
+f=$d.log
+df -h>/tmp/$f
