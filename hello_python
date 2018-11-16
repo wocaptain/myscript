@@ -1,0 +1,22 @@
+#-*- coding:utf8 -*-
+#Description:初识python，打印hello，python!
+#
+print("hello,python!")
+
+#使用变量打印hello,python!
+message = "hello,python!"
+print(message)
+
+"""
+变量的使用和命名
+1:变量名只能包含数字,英文,下划线.变量名可以是英文或下划线开头,不能使用数字开头.
+2:变量名不能包含空格,但可以使用下划线来代替.
+3:不要将python的关键字和函数名做为变量名使用,及不要使用python保留用于特殊的单词.
+4:变量名应既简短又具有描述性.
+5:慎用小写字母l(L)和大写字母O.避免被别人错看成1或0.
+"""
+
+#改变字符串大小写首字大写title() 全部大写upper() 全部小写lower()
+print(message.title())
+print(message.lower())
+print()
