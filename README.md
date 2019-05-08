@@ -1,1 +1,1 @@
-# myscript
+# python脚本练习
